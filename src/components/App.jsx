@@ -4,6 +4,7 @@ import * as API from '../services/api';
 
 export class App extends Component {
   state = {
+    isLoading:false,
     quary: '',
     page: 1,
     error: false,
