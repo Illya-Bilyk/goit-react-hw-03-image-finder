@@ -4,7 +4,7 @@ export const Modal = ({ modalUrl }) => {
   return (
     <Overlay>
       <ModalDiv>
-        <img src={modalUrl} alt="Modal Photo" />
+        <img src={modalUrl} alt="Modal new Photo" />
       </ModalDiv>
     </Overlay>
   );
