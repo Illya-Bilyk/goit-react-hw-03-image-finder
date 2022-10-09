@@ -11,7 +11,7 @@ export const getImages = async (query, page) => {
 
   try {
     const response = await axios.get(`?q=${query}${params}`);
-    return response.data.hits;
+    return response.data;
   } catch (error) {
     console.log(error);
   }
