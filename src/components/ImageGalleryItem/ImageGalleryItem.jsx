@@ -8,8 +8,9 @@ export class GalleryItems extends Component {
   };
 
   modalToggle = () => {
-    this.setState({ modal: true });
+    this.setState(({ modal }) => ({ modal: !modal }));
   };
+
   render() {
     const { previewURL, modalUrl } = this.props;
     const { modal } = this.state;
@@ -22,7 +23,11 @@ export class GalleryItems extends Component {
             onClick={this.modalToggle}
           />
         </Item>
-        {modal && <Modal modalUrl={modalUrl} />}
+        {modal && (
+          <Modal onClose={this.modalToggle}>
+            <img src={modalUrl} alt="Modal new Photo" />
+          </Modal>
+        )}
       </>
     );
   }

@@ -27,6 +27,12 @@ export class App extends Component {
         this.setState({ isLoading: true });
         const getImg = await API.getImages(quary, page);
         const images = getImg.hits;
+        if (images.length === 0) {
+          alert(
+            `Ooops....
+Sorry but we didn't find anything, by your request "${quary}"`
+          );
+        }
         this.setState(state => {
           return {
             images: [...state.images, ...images],
